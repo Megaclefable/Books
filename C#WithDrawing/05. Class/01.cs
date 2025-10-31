@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
 using System.Drawing;
 
-class Sample1
+class Sample1 
 {
     public static void Main()
     {
