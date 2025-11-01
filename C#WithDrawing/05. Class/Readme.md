@@ -1,18 +1,17 @@
+# ICar vs IMovable + IRenderable
 
-# ICar 기반 설계 vs IMovable + IRenderable 기반 설계 차이점 및 장단점 (마크다운 원문)
+## 1. Design Perspective Differences
 
-## 1. 설계 관점 차이
-
-| 항목 | ICar 기반 설계 | IMovable + IRenderable 기반 설계 |
+| Category | ICar-based Design | IMovable + IRenderable-based Design |
 |---|---|---|
-| 책임 분리 | 단일 인터페이스가 여러 역할 포함 | 이동과 렌더링을 인터페이스로 분리 |
-| 관심사 | 자동차라는 구체적 도메인 중심 | 능력(행동) 중심 설계 |
-| 적용 범위 | 자동차 계열 객체에 적합 | 다양한 객체에 적용 가능 |
-| 코드 의존성 | 도메인에 강하게 의존 | 기능 단위로 느슨한 결합 |
+| Responsibility Separation | A single interface contains multiple roles | Movement and rendering are separated into interfaces |
+| Concern Focus | Concrete domain centered on "car" | Capability (behavior) oriented design |
+| Application Scope | Suitable for car-related objects | Applicable to various types of objects |
+| Code Dependency | Strongly dependent on domain | Loosely coupled by functional units |
 
-## 2. 인터페이스 구성 비교
+## 2. Interface Structure Comparison
 
-ICar 방식
+ICar approach
 ```csharp
 interface ICar
 {
@@ -21,97 +20,97 @@ interface ICar
     void Move();
 }
 ```
-- 이동 기능과 렌더링 기능이 한 인터페이스에 같이 들어 있음
-- 자동차라는 구체적인 개념에 묶임
+- Contains both movement and rendering functions in a single interface
+- Bound to a concrete concept of a car
 
-IMovable + IRenderable 방식
+IMovable + IRenderable approach
 ```csharp
 public interface IMovable { void Move(); }
 public interface IRenderable { Image Image { get; } Point Location { get; } }
 ```
-- 이동 기능과 렌더링 기능이 분리됨
-- 유연한 조합 가능
+- Movement and rendering functionalities are separated
+- Flexible combinations are possible
 
-## 3. SOLID 원칙 관점
+## 3. SOLID Principle Perspective
 
-| 원칙 | ICar | IMovable + IRenderable |
+| Principle | ICar | IMovable + IRenderable |
 |---|---|---|
-| SRP 단일 책임 원칙 | 개인별 역할이 섞여 위반 가능 | 각각 책임 분리 |
-| ISP 인터페이스 분리 원칙 | 원하지 않는 멤버도 강제 구현 가능 | 필요한 것만 구현 |
-| OCP 개방/폐쇄 원칙 | 수정으로 확장 필요 발생 가능 | 확장에 유연 |
-| DIP 의존성 역전 원칙 | 도메인 중심 의존 | 추상적 능력 중심 의존 |
+| SRP (Single Responsibility Principle) | Mixed roles may violate the principle | Each interface has a separated responsibility |
+| ISP (Interface Segregation Principle) | May force implementation of unwanted members | Only required members are implemented |
+| OCP (Open/Closed Principle) | Modifications might be required for extension | Extensible without modification |
+| DIP (Dependency Inversion Principle) | Domain-centered dependency | Dependency on abstract capabilities |
 
-## 4. 적용 가능 범위
+## 4. Applicable Scope
 
-| 항목 | ICar | IMovable + IRenderable |
+| Category | ICar | IMovable + IRenderable |
 |---|---|---|
-| 자동차 전용 설계 | 적합 | 과함 |
-| 게임 엔진 구조 | 부적합 | 적합 |
-| UI 요소 표현 | 제한적 | 가능 |
-| 다양한 객체 도입 | 어려움 | 용이 |
+| Car-exclusive design | Suitable | Excessive |
+| Game engine architecture | Not suitable | Suitable |
+| UI element representation | Limited | Possible |
+| Introducing diverse objects | Difficult | Easy |
 
-## 5. 장점 비교
+## 5. Advantages Comparison
 
-ICar 방식 장점:
-- 코드 구조가 단순하다
-- 자동차 중심 도메인 프로그램에서 이해하기 쉽다
-- 인터페이스가 하나라 관계가 단순하다
+Advantages of the ICar approach:
+- Simple code structure
+- Easy to understand in car-centric domain programs
+- One interface keeps relationships simple
 
-IMovable + IRenderable 방식 장점:
-- 재사용성이 높다
-- 이동 가능한 객체, 렌더링 가능한 객체를 자유롭게 설계 가능하다
-- 유지보수성이 높다
-- 테스트가 용이하다
-- 책임 분리 덕분에 변경 파급이 적다
+Advantages of the IMovable + IRenderable approach:
+- High reusability
+- Freely design movable/renderable objects
+- High maintainability
+- Easy to test
+- Separation of responsibilities reduces ripple effects caused by changes
 
-## 6. 단점 비교
+## 6. Disadvantages Comparison
 
-ICar 방식 단점:
-- 이동과 렌더링이 분리되어 있지 않다
-- 자동차 외 객체를 도입하기 어렵다
-- 확장 시 인터페이스 수정 필요성이 발생한다
-- 관심사가 결합된다
+Disadvantages of the ICar approach:
+- Movement and rendering are not separated
+- Difficult to introduce non-car objects
+- Interface modifications may be required for extension
+- Concerns are coupled
 
-IMovable + IRenderable 방식 단점:
-- 인터페이스 개수가 증가한다
-- 초기에 구조가 복잡해 보인다
-- 설계 시간이 상대적으로 증가한다
+Disadvantages of the IMovable + IRenderable approach:
+- Increased number of interfaces
+- Initial structure may look complex
+- Design time slightly increases
 
-## 7. 현실적 비유
+## 7. Realistic Analogy
 
 ICar:
-- 자동차에만 적합한 정해진 역할을 강제하는 구조
+- A structure that forces fixed roles suitable only for cars
 
 IMovable / IRenderable:
-- 필요할 때 붙이는 "능력 컴포넌트" 형태로, 게임 엔진 컴포넌트 디자인과 유사한 설계
+- "Ability components" that can be attached as needed, similar to component-based designs used in game engines
 
-## 8. 실제 권장 상황
+## 8. Recommended Situations
 
-ICar 권장 상황:
-- 규모가 매우 작고 자동차만 다루는 애플리케이션
-- 확장 요구가 없고, 개발 속도가 중요할 때
+ICar recommended when:
+- The scope is small and only cars are handled
+- No expansion requirements, development speed is prioritized
 
-IMovable + IRenderable 권장 상황:
-- 많은 종류의 객체를 다루는 경우
-- 게임 개발, UI 렌더링, 애니메이션 구조
-- 유지보수에 강한 구조가 필요한 경우
+IMovable + IRenderable recommended when:
+- Many types of objects must be handled
+- Game development, UI rendering, animation systems
+- Strong maintainability is required
 
-## 9. 정리 표
+## 9. Summary Table
 
-| 특징 비교 | ICar | IMovable + IRenderable |
+| Feature Comparison | ICar | IMovable + IRenderable |
 |---|---|---|
-| 단순성 | 높음 | 중간 |
-| 확장성 | 낮음 | 높음 |
-| 재사용성 | 낮음 | 높음 |
-| 테스트 용이성 | 중간 | 높음 |
-| 책임 분리 | 낮음 | 높음 |
-| 도메인 의존성 | 높음 | 낮음 |
+| Simplicity | High | Medium |
+| Extensibility | Low | High |
+| Reusability | Low | High |
+| Testability | Medium | High |
+| Responsibility Separation | Low | High |
+| Domain Dependency | High | Low |
 
-## 10. 결론
+## 10. Conclusion
 
-ICar 방식은 단순한 자동차 중심 예제에서는 매우 효율적이며 직관적으로 이해되고 개발 속도가 빠르다.
-하지만 이동과 렌더링이라는 관심사 분리가 이루어지지 않아 다양한 객체를 다루는 시스템에서는 확장성과 유지보수성이 떨어진다.
+The ICar approach is efficient in simple, car-centric examples.
+However, since movement and rendering concerns are not separated, it suffers from low extensibility and maintainability in systems that must handle diverse types of objects.
+-> Adding flyingcar or marinecar would be possible.
 
-IMovable + IRenderable 방식은 책임 분리, 재사용성, 확장성 측면에서 유리하며 다양한 객체가 공존하는 시스템에서 구조적인 장점을 제공한다. 초기 설계 비용은 증가하지만 장기적으로 유지보수에 강한 구조가 된다.
-
-
+The IMovable + IRenderable approach offers advantages in responsibility separation, reusability, and extensibility, and provides structural benefits in systems where various objects coexist.
+-> You can add truck instead of only car, etc.
