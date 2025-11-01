@@ -2,7 +2,7 @@
 using System.Drawing;
 
 class Sample1 
-{
+{ 
     public static void Main()
     {
         Form fm = new Form();
