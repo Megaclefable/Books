@@ -19,6 +19,12 @@ class Sample1
         pb.Top = c.top;
         pb.Left = c.left;
 
+        /*
+        Application
+              → Form (window)
+                   → Controls
+                        → Button / PictureBox / Label ...
+        */
         pb.Parent = fm;
 
         Application.Run(fm);
