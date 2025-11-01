@@ -6,7 +6,7 @@ class Sample1
     public static void Main()
     {
         Form fm = new Form();
-        fm.Text = "샘플";
+        fm.Text = "Sample";
         fm.Width = 300; fm.Height = 200; 
 
         PictureBox pb = new PictureBox();
