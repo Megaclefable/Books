@@ -7,7 +7,7 @@ public interface IMovable
 {
     void Move();
 }
-
+ 
 // presentation contract: "can be drawn"
 public interface IRenderable
 {
