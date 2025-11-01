@@ -25,7 +25,7 @@ class Sample1
                    → Controls
                         → Button / PictureBox / Label ...
         */
-        pb.Parent = fm;
+        pb.Parent = fm; //Same with : fm.Controls.Add(pb);
 
         Application.Run(fm);
     }
