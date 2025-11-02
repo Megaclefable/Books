@@ -1,4 +1,10 @@
-﻿using System.Windows.Forms;
+/*
+
+Make the form with interface.
+
+*/
+
+using System.Windows.Forms;
 using System.Drawing;
 
 class Sample5 : Form
@@ -9,7 +15,7 @@ class Sample5 : Form
     }
     public Sample5()
     {
-        this.Text = "샘플";
+        this.Text = "Sample";
         this.Width = 400; this.Height = 200;
         this.BackgroundImage = Image.FromFile("c:\\car.bmp");
     }
