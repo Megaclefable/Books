@@ -2,6 +2,12 @@
 
 Make the form with interface.
 
+We don't need to right all these :
+Form fm = new Form();
+fm.Text = "Sample";
+Application.Run(fm);
+
+
 */
 
 using System.Windows.Forms;
