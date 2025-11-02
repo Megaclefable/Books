@@ -1,3 +1,12 @@
+/*
+Function :
+If you click the form, the label will be chagned.
+
+The delegate is already done in Forms :
+public delegate void EventHandler(object sender, EventArgs e);
+*/
+
+
 using System;
 using System.Windows.Forms;
 
@@ -19,6 +28,7 @@ class Sample1 : Form
         lb.Text = "Welcome!";
         
         lb.Parent = this;
+
        
         this.Click += new EventHandler(fm_Click);
     }
