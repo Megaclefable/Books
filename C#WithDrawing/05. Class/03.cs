@@ -1,4 +1,18 @@
-﻿using System.Windows.Forms;
+/*
+Efficient initialization for declared object 
+include this in construct
+
+public void Reset()
+{
+    top = 0;
+    left = 0;
+    img = Image.FromFile("c:\\car.bmp");
+}
+
+
+*/
+
+using System.Windows.Forms;
 using System.Drawing;
 
 class Sample3
@@ -6,7 +20,7 @@ class Sample3
     public static void Main()
     {
         Form fm = new Form();
-        fm.Text = "샘플";
+        fm.Text = "Sample";
         fm.Width = 250; fm.Height = 100;
 
         Label lb = new Label();
@@ -22,8 +36,17 @@ class Sample3
         Application.Run(fm);
     }
 }
+
 class Car
-{
+{   
+    /*static : every object share this value.   c1. c2. etc.. 
+
+    static = can be called without an object
+    
+    1) It can be used immediately without creating an object
+    2) It provides a shared space that belongs to the class rather than each instance
+    
+    */
     public static int Count = 0;
     private Image img;
     private int top;
@@ -38,7 +61,7 @@ class Car
     }
     public static string CountCar()
     {
-        return "자동차는 " + Count + "대있습니다.";
+        return "how many cars? " + Count + "!";
     }
     public void Move()
     {
