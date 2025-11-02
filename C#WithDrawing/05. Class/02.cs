@@ -6,7 +6,7 @@ class Sample2
     public static void Main()
     {
         Form fm = new Form();
-        fm.Text = "샘플";
+        fm.Text = "Sample";
         fm.Width = 300; fm.Height = 200; 
 
         PictureBox pb = new PictureBox();
@@ -49,6 +49,18 @@ class Car
     {
         return img;
     }
+
+    /*Why we use get set? 
+    public int Left
+    {
+        set {
+            if (value >= 0) left = value; // 검증
+        }
+    }
+
+    like this, we can put the verification.
+    */
+    
     public int Top
     {
         set { top = value; }
