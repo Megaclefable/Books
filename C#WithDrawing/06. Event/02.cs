@@ -40,10 +40,10 @@ class Sample2 : Form
 
     /*
     public void bt_Click(Object sender, EventArgs e)
-{
+    {
     if (bt.Text == "Purchase")
     {
-        lb.Text = "Purchase Thanks!";
+        lb.Text = "Purchased done, Thanks!";
         bt.Text = "Back to first page";
     }
     else if (bt.Text == "Back to first page")
@@ -51,7 +51,7 @@ class Sample2 : Form
         lb.Text = "Welcome";
         bt.Text = "Purchase"
     */
-    
+    /*when clicked, this event happens */
     public void bt_Click(Object sender, EventArgs e)
     {
         lb.Text = "Thanks!";
