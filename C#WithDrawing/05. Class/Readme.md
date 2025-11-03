@@ -1,4 +1,4 @@
-# ICar vs IMovable + IRenderable
+# ICar vs IMovable+IRenderable  (SOB)
 
 ## 1. Design Perspective Differences
 
