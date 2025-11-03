@@ -48,8 +48,8 @@ class Sample4 : Form
         }
         else
         {
-           str = "다른 키";
+           str = "other key";
         }
-        lb2.Text = str + "입니다.";
+        lb2.Text = str + "is pressed.";
     }
 }
