@@ -1,4 +1,8 @@
-﻿using System;
+/*
+If the cursor is in the window or out, it has the event.
+*/
+
+using System;
 using System.Windows.Forms;
 
 class Sample3 : Form
