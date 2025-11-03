@@ -99,12 +99,12 @@ IMovable + IRenderable recommended when:
 
 | Feature Comparison | ICar | IMovable + IRenderable |
 |---|---|---|
-| Simplicity | High | Medium |
-| Extensibility | Low | High |
-| Reusability | Low | High |
-| Testability | Medium | High |
-| Responsibility Separation | Low | High |
-| Domain Dependency | High | Low |
+| Simplicity | o | just ok |
+| Extensibility | x | o |
+| Reusability | x | o |
+| Testability | just ok | o |
+| Responsibility Separation | x | o |
+| Domain Dependency | o | x |
 
 ## 10. Conclusion
 
