@@ -37,6 +37,21 @@ class Sample2 : Form
         
         bt.Click += new EventHandler(bt_Click);
     }
+
+    /*
+    public void bt_Click(Object sender, EventArgs e)
+{
+    if (bt.Text == "Purchase")
+    {
+        lb.Text = "Purchase Thanks!";
+        bt.Text = "Back to first page";
+    }
+    else if (bt.Text == "Back to first page")
+    {
+        lb.Text = "Welcome";
+        bt.Text = "Purchase"
+    */
+    
     public void bt_Click(Object sender, EventArgs e)
     {
         lb.Text = "Thanks!";
