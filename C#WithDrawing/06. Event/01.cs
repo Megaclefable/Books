@@ -1,6 +1,6 @@
 /*
 Function :
-If you click the form, the label will be chagned.
+If you click the form, the label will be changed.
 
 The delegate is already done in Forms :
 public delegate void EventHandler(object sender, EventArgs e);
