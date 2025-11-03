@@ -1,4 +1,11 @@
-﻿using System;
+/*
+
+if Purchase button is clicked, 
+the showing label : Welcome! -> Thanks!
+
+*/
+
+using System;
 using System.Windows.Forms;
 
 class Sample2 : Form
