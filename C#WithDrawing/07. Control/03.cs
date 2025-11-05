@@ -4,10 +4,7 @@ Output :
 0th vehicle
 	1th vehicle(background color : gray)
 		2th vehicle 
-
 */
-
-
 
 using System.Windows.Forms;
 using System.Drawing;
