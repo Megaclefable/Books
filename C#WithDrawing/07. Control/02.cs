@@ -19,7 +19,7 @@ class Sample2 : Form
         tlp.Dock = DockStyle.Fill;
         tlp.ColumnCount = 3;
         tlp.RowCount = 2;
-
+ 
         for (int i = 0; i < bt.Length; i++)
         {
             bt[i] = new Button();
