@@ -1,4 +1,15 @@
-﻿using System.Windows.Forms;
+/*
+Output :
+
+0th vehicle
+	1th vehicle(background color : gray)
+		2th vehicle 
+
+*/
+
+
+
+using System.Windows.Forms;
 using System.Drawing;
 
 class Sample3 : Form
@@ -35,10 +46,12 @@ class Sample3 : Form
         lb[1].BackColor = Color.Gray;
         lb[2].BackColor = Color.White;
 
+		/*location alignement*/
         lb[0].TextAlign = ContentAlignment.TopLeft;
         lb[1].TextAlign = ContentAlignment.MiddleCenter;
         lb[2].TextAlign = ContentAlignment.BottomRight;
 
+		/*Border */
         lb[0].BorderStyle = BorderStyle.None;
         lb[1].BorderStyle = BorderStyle.FixedSingle;
         lb[2].BorderStyle = BorderStyle.Fixed3D;
