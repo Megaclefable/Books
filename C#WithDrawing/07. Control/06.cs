@@ -1,5 +1,5 @@
 /*
-
+ 
 Welcome!                     Car is selected            Truck is back to normal status.
                          ->                         ->
 [ ] Car, [ ] Truck           [v] Car, [ ] Truck          [  ] Car, [ ] Truck
