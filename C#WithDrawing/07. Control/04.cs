@@ -27,6 +27,14 @@ class Sample4 : Form
             lb[i].Width = 200;
         }
 
+        /*
+        new Font("Font family name", font size, Fontstyle)
+
+        Arial, Times New Roman, Courier New
+        Regular, Bold, Italic, Underline, Strikeout
+        
+        */
+
         lb[0].Font = new Font("Arial", 12,FontStyle.Bold);
         lb[1].Font = new Font("Times New Roman", 14 ,FontStyle.Bold);
         lb[2].Font = new Font("Courier New", 16, FontStyle.Bold);
