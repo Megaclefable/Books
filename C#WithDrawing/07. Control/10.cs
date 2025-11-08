@@ -64,8 +64,9 @@ class Sample10 : Form
         ms.Items.Add(mi[0]);   // 4. 가장 위의 메뉴 설정 : 메인1, 메인2 (파일, 편집, 서식, 도움말 등)
         ms.Items.Add(mi[1]);
 
-        this.MainMenuStrip = ms; // 5. 폼의 메뉴 설정, 대표매뉴로 설정하는거라 alt키 같은 거 작동 한다.  그냥 위에 new MenuStrip(); 인스턴스로 메뉴는 만들 수 있음.
-
+        // 5. 폼의 메뉴 설정, 대표매뉴로 설정하는거라 alt키 같은 거 작동 한다.  그냥 위에 new MenuStrip(); 인스턴스를 parent this해서 메뉴는 만들 수 있음.
+        this.MainMenuStrip = ms; 
+        
         ms.Parent = this;  
         lb.Parent = this;
 
